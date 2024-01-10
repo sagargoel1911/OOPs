@@ -42,4 +42,5 @@ int main(){
     Base2*b2 = new Inherited2();
     delete b2;// both Inherited2 and Base2 destructed
     return 0;
+    // NOTE VIRTUAL CONSTRUCTORS ARE NOT ALLOWED
 }

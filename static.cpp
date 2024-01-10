@@ -15,7 +15,7 @@ class Human{
     }
 
 };
-int Human::population=5;//initialise a static variable
+int Human::population=5;//initialise a static variable// even private static members can be INITIALISED like this, rest static members work with access modifiers as others do
 int main(){
     Human Sagar;
     Sagar.showPop();

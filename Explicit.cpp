@@ -15,7 +15,7 @@ class B{
     }
 };
 int main(){
-    A a=10;
+    A a=10;// We just converted an int to A implicitly
     cout<<a.num<<endl;
     // B b=10; // error as this is what explicit does
     B b(10);

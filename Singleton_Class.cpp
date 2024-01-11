@@ -4,7 +4,7 @@ class Singleton{
     static Singleton*instance;
     Singleton(){
         data=10;
-    }
+    }// example of private constructor, needed whenever we need to control the formation of objects
     public:
     int data;
     static Singleton* getInstance(){

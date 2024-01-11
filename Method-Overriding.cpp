@@ -25,6 +25,12 @@ class C: public A, public B, public D{
         cout<<"C"<<endl;
     }
 };
+class E: public C{
+    public:
+    void func(){
+        cout<<"E"<<endl;
+    }
+};
 int main(){
     //if an object of an inherited class is made and the function is called, then the function of inherited class will only be called, the doubt arises when a function of base class is called
     C*c=new C;
@@ -39,5 +45,7 @@ int main(){
     D*d=new C; // the pointer of D can be made and initialised with a value of C;
     d->func();
     d->D::func();// the only use of having a body for pure virtual function // if body not defined, undefined refernce can come here
+    C*obj=new E;
+    obj->func();//E.  Because a method that takes place of a virtual function is also virtual (C.func() here), a virtual function in a Base class also remains virtual in inherited class.
     return 0;
 }

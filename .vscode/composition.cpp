@@ -10,7 +10,10 @@ using namespace std;
 
 // There is another mechanism that is less radical than replacing all the inheritance code with composition is
 // that whenever there is a has a relationship, use composition, whenever there is an is a relationship, use inhertance
-// in many cases, is a can be replaced by a has - a relationship
+// in many cases, is a can be replaced by a part - of relationship
+
+
+//Difference between aggregation and composition, in composition, when the parent is deleted, the child is deleted too.
 class Legs {
     public:
     void hasLegs(string s){
@@ -26,11 +29,19 @@ class Arms {
 };
 
 class Robot {
-    Legs legs;
-    Arms arms;
+    Legs *legs;
+    Arms *arms;
     public:
-    void walk () {legs.hasLegs("Robot");}
-    void grab () {arms.hasArms("Robot");}
+    Robot(){
+        legs = new Legs();
+        arms = new Arms();
+    }
+    void walk () {legs->hasLegs("Robot");}
+    void grab () {arms->hasArms("Robot");}
+    ~Robot(){
+        delete legs;
+        delete arms;
+    }
 };
 
 int main(){

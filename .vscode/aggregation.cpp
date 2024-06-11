@@ -29,10 +29,6 @@ class Robot {
     }
     void walk () {legs->hasLegs("Robot");}
     void grab () {arms->hasArms("Robot");}
-    ~Robot(){
-        delete legs;
-        delete arms;
-    }
 };
 
 int main(){
@@ -41,5 +37,7 @@ int main(){
     Robot r(legs,arms);
     r.walk();
     r.grab();
+    delete legs;
+    delete arms;
     return 0;
 }
